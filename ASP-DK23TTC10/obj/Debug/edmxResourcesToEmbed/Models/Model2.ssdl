@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="100" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="varchar" MaxLength="15" />
+    <Property Name="avatar" Type="varchar" MaxLength="255" />
+    <Property Name="role" Type="int" />
+    <Property Name="created_at" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_users" Type="int" Nullable="false" />
+    <Property Name="invoice_code" Type="varchar" MaxLength="100" />
+    <Property Name="options" Type="int" />
+    <Property Name="content" Type="varchar" MaxLength="255" />
+    <Property Name="image" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="created_at" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_users" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="phone" Type="varchar" MaxLength="15" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="created_at" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="services">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="100" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="varchar" MaxLength="15" />
+    <Property Name="avatar" Type="varchar" MaxLength="255" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="description" Type="text" />
+    <Property Name="created_at" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__comment__id_user__164452B1">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="comment" Type="Self.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="comment">
+        <PropertyRef Name="id_users" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Model2StoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="comment" EntityType="Self.comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orders" EntityType="Self.orders" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [orders].[id] AS [id], 
+    [orders].[id_users] AS [id_users], 
+    [orders].[email] AS [email], 
+    [orders].[name] AS [name], 
+    [orders].[phone] AS [phone], 
+    [orders].[address] AS [address], 
+    [orders].[created_at] AS [created_at]
+    FROM [dbo].[orders] AS [orders]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__comment__id_user__164452B1" Association="Self.FK__comment__id_user__164452B1">
+      <End Role="users" EntitySet="users" />
+      <End Role="comment" EntitySet="comment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

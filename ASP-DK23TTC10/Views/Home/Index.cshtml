@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+        <div class="row">
+            <div class="col-6">
+                <h2>Trang chủ</h2>
+            </div>
+            <div class="col-6"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col order-last">
+                    <a class="btn btn-outline-primary btn-sm" href="@Url.Action("Index","Services")">Quản lý dịch vụ</a>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-primary btn-sm" href="@Url.Action("dangky","Admin")">User đăng ký</a>
+                </div>
+                <div class="col order-first">
+                    <a class="btn btn-outline-primary btn-sm" href="@Url.Action("dangnhap","Admin")">Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-2"></div>
+</div>
+

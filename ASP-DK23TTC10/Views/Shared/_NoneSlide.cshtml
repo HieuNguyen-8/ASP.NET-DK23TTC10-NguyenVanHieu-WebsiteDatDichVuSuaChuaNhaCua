@@ -1,0 +1,170 @@
+﻿<!Doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" integrity="" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+    <div class="row" style="background-color: #ffb400;">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Images/Logo-YuYun.jpg" class="" alt="..." width="90px" height="45px"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="d-flex">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Sửa điện nước</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Sửa máy lạnh</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Sửa máy bơm</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Sửa máy giặt</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Sửa bồn cầu</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Thông cầu cống</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoration-underline fw-bolder">Liên hệ</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <p class="text-decoation-underline fw-bolder">Fanpage YuYun</p>
+                                </li>
+                                <li class="nav-item my-2 mx-2">
+                                    <a class="text-decoation-underline fw-bolder" href="">Admin Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+
+
+    @{
+        Html.RenderPartial("navbar2");
+    }
+    @RenderBody()
+
+
+
+
+
+    <!-- start footer 1-->
+    <div class="row shadow-sm" style="background-color: #ffb400">
+
+        <div class="col-sm-0 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+
+        <div class="col-sm-0 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+            <div class="row">
+                <div class="col-sm-0 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-start text-uppercase fw-medium text-break text-center" style="font-size: 19.5px;">CÔNG TY TNHH THƯƠNG MẠI KỸ THUẬT DỊCH VỤ YUYUN</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3"><strong>Địa chỉ: </strong></div>
+                        <div class="col-9">Số 1225/133 Huỳnh Tấn Phát, Khu phố 4, Phường Phú Thuận, Quận 7, Thành phố Hồ Chí Minh, Việt Nam</div>
+                        <div class="col-3"><strong>MST: </strong></div>
+                        <div class="col-9">318732460</div>
+                        <div class="col-3"><strong>Hotline: </strong></div>
+                        <div class="col-9">0868 412 048</div>
+                        <div class="col-3"><strong>Phone:  </strong></div>
+                        <div class="col-9">0868 412 048</div>
+                        <div class="col-3"><strong>Phone:  </strong></div>
+                        <div class="col-9">0868 412 048</div>
+                        <div class="col-3"><strong>Email: </strong></div>
+                        <div class="col-9">truongan.yuyun@gmail.com</div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-0 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-start text-capitalize fw-medium text-break text-center" style="font-size: 19.5px;">Dịch vụ của chúng tôi</p>
+                        </div>
+                    </div>
+                    <p style="margin-left: 100px;"><i class="fa-solid fa-circle-chevron-right"></i>Thợ Điện Nước</p>
+                    <p style="margin-left: 100px;"><i class="fa-solid fa-circle-chevron-right"></i>Thợ Điện Lạnh</p>
+                    <p style="margin-left: 100px;"><i class="fa-solid fa-circle-chevron-right"></i>Xây Dựng</p>
+                    <p style="margin-left: 100px;"><i class="fa-solid fa-circle-chevron-right"></i>Dịch Vụ Vệ Sinh</p>
+                    <p style="margin-left: 100px;"><i class="fa-solid fa-circle-chevron-right"></i>Thợ Mộc</p>
+                    <p style="margin-left: 100px;"><i class="fa-solid fa-circle-chevron-right"></i>Dịch Vụ Vận Chuyển</p>
+                </div>
+
+
+
+                <div class="col-sm-0 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-start text-capitalize fw-medium text-break text-center" style="font-size: 19.5px;">Hoạt động 24/7:</p>
+                            <p class="text-start text-capitalize fs-6 text-center">Luôn Làm Hài Lòng Khách Hàng</p>
+                        </div>
+                    </div>
+
+                    <form class="row g-3">
+
+                        <div class="col-9">
+                            <label for="inputPassword2" class="visually-hidden">Email</label>
+                            <input type="text" class="form-control" id="staticEmail2" placeholder="" value="">
+                        </div>
+                        <div class="col-3">
+                            <button type="submit" class="btn btn-primary mb-3">Liên hệ</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-0 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+
+
+    </div>
+    <!-- end footer 1-->
+    <!-- start footer 2-->
+
+    <div class="position-relative" style="height: 45px;">
+
+        <p class="position-absolute top-50 start-50 translate-middle text-center">
+            YuYun luôn mong muốn mang tới dịch vụ tốt nhất cho Quý Khách Hàng. Đổi thợ khác nếu Quý Khách không hài lòng về “Báo giá” hoặc “Cách phục vụ chưa tốt”. YuYun kính mong quý khách Góp ý để  công ty phát triển.
+        </p>
+    </div>
+    <!-- end footer 2-->
+
+    <script src="~/Scripts/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="~/Scripts/bootstrap.bundle.js" integrity="" crossorigin="anonymous"></script>
+    <script src="~/Scripts/popper.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@model ASP_DK23TTC10.Models.service
+
+@{
+    ViewBag.Title = "Chi tiết dịch vụ - liên hệ";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+
+            <div class="clearfix">
+                <p class="float-md-end mb-3 ms-md-3">
+                    <a class="btn btn-danger" href="@Url.Action("Index","Services")">Quay lại</a>
+                </p>
+                <h3 class="">@Model.name</h3>
+            </div>
+
+            <div class="clearfix">
+                <img src="~/Images/diennuoc1.png" class="float-md-end mb-3 ms-md-3" alt="..." width="225px">
+                <p>
+                    @Model.description
+                </p>
+            </div>
+
+
+        </div>
+        
+        <div class="col-3" style="background-color: #00FFFF;">
+            <h3></h3>
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Số điện thoại</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your phone with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Tên khách hàng</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Chọn dịch vụ cần tư vấn - báo giá</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary form-control">Liên hệ</button>
+            </form>
+
+        </div>
+    </div>
+</div>

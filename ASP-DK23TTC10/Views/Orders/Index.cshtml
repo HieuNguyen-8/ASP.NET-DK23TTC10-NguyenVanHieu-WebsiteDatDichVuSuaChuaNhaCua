@@ -1,0 +1,51 @@
+﻿@model List<ASP_DK23TTC10.Models.order>
+
+@{
+    ViewBag.Title = "Thông tin đặt hàng";
+    Layout = "~/Views/Shared/_NoneSlide.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+        <div class="row">
+            <div class="col-6">
+                <h3>Thông tin đặt hàng</h3>
+            </div>
+            <div class="col-6">
+                <a class="btn btn-outline-primary btn-sm" href="@Url.Action("Index","Home")">Trở về</a>
+            </div>
+        </div>
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Mã user</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tên người dùng</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Địa chỉ</th>
+                    <th scope="col">Thời gian đặt tư vấn dịch vụ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.id</th>
+                        <td>@item.id_users</td>
+                        <td>@item.email</td>
+                        <td>@item.name</td>
+                        <td>@item.phone</td>
+                        <td>@item.address</td>
+                        <td>@item.created_at</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-2"></div>
+</div>
