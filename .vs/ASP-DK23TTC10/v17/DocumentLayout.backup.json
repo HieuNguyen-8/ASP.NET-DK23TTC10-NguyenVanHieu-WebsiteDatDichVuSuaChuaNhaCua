@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB73825-53A2-4013-9CF1-286DD80B8628}|ASP-DK23TTC10\\ASP-DK23TTC10.csproj|c:\\asp\\v6 -git\\asp-dk23ttc10\\asp-dk23ttc10\\views\\services\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BB73825-53A2-4013-9CF1-286DD80B8628}|ASP-DK23TTC10\\ASP-DK23TTC10.csproj|solutionrelative:asp-dk23ttc10\\views\\services\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB73825-53A2-4013-9CF1-286DD80B8628}|ASP-DK23TTC10\\ASP-DK23TTC10.csproj|c:\\asp\\v6 -git\\asp-dk23ttc10\\asp-dk23ttc10\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BB73825-53A2-4013-9CF1-286DD80B8628}|ASP-DK23TTC10\\ASP-DK23TTC10.csproj|solutionrelative:asp-dk23ttc10\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BB73825-53A2-4013-9CF1-286DD80B8628}|ASP-DK23TTC10\\ASP-DK23TTC10.csproj|c:\\asp\\v6 -git\\asp-dk23ttc10\\asp-dk23ttc10\\views\\admin\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1BB73825-53A2-4013-9CF1-286DD80B8628}|ASP-DK23TTC10\\ASP-DK23TTC10.csproj|solutionrelative:asp-dk23ttc10\\views\\admin\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 100,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\ASP-DK23TTC10\\Views\\Services\\Index.cshtml",
+              "RelativeDocumentMoniker": "ASP-DK23TTC10\\Views\\Services\\Index.cshtml",
+              "ToolTip": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\ASP-DK23TTC10\\Views\\Services\\Index.cshtml",
+              "RelativeToolTip": "ASP-DK23TTC10\\Views\\Services\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-08T09:45:01.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\ASP-DK23TTC10\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "ASP-DK23TTC10\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\ASP-DK23TTC10\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "ASP-DK23TTC10\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T09:44:26.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dangnhap.cshtml",
+              "DocumentMoniker": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\ASP-DK23TTC10\\Views\\Admin\\Dangnhap.cshtml",
+              "RelativeDocumentMoniker": "ASP-DK23TTC10\\Views\\Admin\\Dangnhap.cshtml",
+              "ToolTip": "C:\\ASP\\V6 -Git\\ASP-DK23TTC10\\ASP-DK23TTC10\\Views\\Admin\\Dangnhap.cshtml",
+              "RelativeToolTip": "ASP-DK23TTC10\\Views\\Admin\\Dangnhap.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-08T09:43:14.523Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

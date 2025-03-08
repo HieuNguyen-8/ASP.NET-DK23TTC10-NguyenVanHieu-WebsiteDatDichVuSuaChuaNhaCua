@@ -20,7 +20,7 @@ namespace ASP_DK23TTC10.Controllers
             {
                 return View("Incorrect");
             }
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             service ctdvlienhe = db.services.Where(row => row.id == id).FirstOrDefault();
             return View(ctdvlienhe);
         }

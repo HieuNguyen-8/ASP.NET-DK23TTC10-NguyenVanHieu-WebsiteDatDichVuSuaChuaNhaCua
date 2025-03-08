@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin">
           <Key>
             <PropertyRef Name="id" />
@@ -16,7 +16,7 @@
           <Property Name="phone" Type="varchar" MaxLength="15" />
           <Property Name="avatar" Type="varchar" MaxLength="255" />
           <Property Name="role" Type="int" />
-          <Property Name="created_at" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
         </EntityType>
         <EntityType Name="comment">
           <Key>
@@ -49,7 +49,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="255" />
-          <Property Name="description" Type="text" />
+          <Property Name="description" Type="ntext" />
           <Property Name="created_at" Type="datetime" />
         </EntityType>
         <EntityType Name="users">
@@ -78,7 +78,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comment" EntityType="Self.comment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
@@ -103,7 +103,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="admin">
           <Key>
             <PropertyRef Name="id" />
@@ -115,7 +115,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
           <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="role" Type="Int32" />
-          <Property Name="created_at" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="comment">
           <Key>
@@ -135,7 +135,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="created_at" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="user">
@@ -177,7 +177,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admin_deptrai" EntityType="Self.admin" />
           <EntitySet Name="comment1" EntityType="Self.comment" />
           <EntitySet Name="services" EntityType="Self.service" />
@@ -193,9 +193,9 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="admin_deptrai">
-            <EntityTypeMapping TypeName="Model.admin">
+            <EntityTypeMapping TypeName="Model1.admin">
               <MappingFragment StoreEntitySet="admin">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="email" ColumnName="email" />
@@ -209,7 +209,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="comment1">
-            <EntityTypeMapping TypeName="Model.comment">
+            <EntityTypeMapping TypeName="Model1.comment">
               <MappingFragment StoreEntitySet="comment">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_users" ColumnName="id_users" />
@@ -221,7 +221,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="services">
-            <EntityTypeMapping TypeName="Model.service">
+            <EntityTypeMapping TypeName="Model1.service">
               <MappingFragment StoreEntitySet="services">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -231,7 +231,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="Model.user">
+            <EntityTypeMapping TypeName="Model1.user">
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="email" ColumnName="email" />
@@ -246,7 +246,7 @@ warning 6002: The table/view 'ASP-NET.dbo.orders' does not have a primary key de
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="orders">
-            <EntityTypeMapping TypeName="Model.order">
+            <EntityTypeMapping TypeName="Model1.order">
               <MappingFragment StoreEntitySet="orders">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_users" ColumnName="id_users" />

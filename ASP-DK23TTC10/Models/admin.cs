@@ -21,6 +21,6 @@ namespace ASP_DK23TTC10.Models
         public string phone { get; set; }
         public string avatar { get; set; }
         public Nullable<int> role { get; set; }
-        public byte[] created_at { get; set; }
+        public Nullable<System.DateTime> created_at { get; set; }
     }
 }

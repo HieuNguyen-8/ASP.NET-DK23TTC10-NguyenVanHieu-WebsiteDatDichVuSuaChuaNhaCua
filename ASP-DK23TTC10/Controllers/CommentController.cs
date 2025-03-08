@@ -12,7 +12,7 @@ namespace ASP_DK23TTC10.Controllers
         // GET: Comment
         public ActionResult Index()
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             List<comment> comment = db.comment1.ToList();
             
             return View(comment);

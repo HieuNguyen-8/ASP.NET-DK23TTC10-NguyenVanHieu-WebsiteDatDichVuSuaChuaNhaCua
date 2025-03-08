@@ -12,7 +12,7 @@ namespace ASP_DK23TTC10.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             List<user> users = db.users.ToList();
             return View(users);
         }

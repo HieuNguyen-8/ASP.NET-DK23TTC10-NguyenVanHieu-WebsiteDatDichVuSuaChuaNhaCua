@@ -13,14 +13,14 @@ namespace ASP_DK23TTC10.Controllers
         // GET: Services
         public ActionResult Index()
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             List<service> post_dichvu = db.services.ToList();
             return View(post_dichvu);
         }
         [HttpPost]
         public ActionResult Index(string search_post = "")
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             List<service> search = db.services.Where(tim => tim.name.Contains(search_post) || tim.description.Contains(search_post)).ToList();
             ViewBag.value_search = search_post;
             return View(search);
@@ -31,7 +31,7 @@ namespace ASP_DK23TTC10.Controllers
             {
                 return View("Incorrect");
             }
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             service detail_services = db.services.Where(row => row.id == id).FirstOrDefault();
             return View(detail_services);
         }
@@ -42,7 +42,7 @@ namespace ASP_DK23TTC10.Controllers
         [HttpPost]
         public ActionResult Create(service s)
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             db.services.Add(s);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -53,14 +53,14 @@ namespace ASP_DK23TTC10.Controllers
             {
                 return View("Incorrect");
             }    
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             service services = db.services.Where(row => row.id == id).FirstOrDefault();
             return View(services);
         }
         [HttpPost]
         public ActionResult Edit(service sv)
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             service services = db.services.Where(row => row.id == sv.id).FirstOrDefault();
             //Update database
             services.name = sv.name;
@@ -75,14 +75,14 @@ namespace ASP_DK23TTC10.Controllers
             {
                 return View("Incorrect");
             }
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             service del_services = db.services.Where(row => row.id == id).FirstOrDefault();
             return View(del_services);
         }
         [HttpPost]
         public ActionResult Delete(int id, service s)
         {
-            Entities1 db = new Entities1();
+            Entities db = new Entities();
             service del_services = db.services.Where(row => row.id == id).FirstOrDefault();
             db.services.Remove(del_services);
             db.SaveChanges();
